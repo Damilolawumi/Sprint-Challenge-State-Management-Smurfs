@@ -1,9 +1,22 @@
 import React from 'react';
 
-function SmurfList() {
+
+
+function SmurfList(props) {
 
     return (
         <div>
+            {
+                props.smurfs.map(smurf => {
+                    return (
+                        <div>
+                            <p>{smurf.name} </p>
+                            <p>{smurf.age} </p>
+                            <p>{smurf.height} </p>
+                        </div>
+                    )
+                })
+            }
         </div>
     )
 }
