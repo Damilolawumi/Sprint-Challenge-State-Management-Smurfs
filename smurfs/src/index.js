@@ -7,5 +7,20 @@ import {Provider } from 'react-redux';
 import * as reducers from './state/reducers';
 import thunk from 'redux-thunk';
 
+const monsterReducer = combineReducers({
+    smurfs: reducers.countReducer,
+  
+});
 
-ReactDOM.render(<App />, document.getElementById("root"));
+
+const store = createStore(
+    monsterReducer,
+    {},
+    compose(
+        applyMiddleware(thunk),
+
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    ),
+);
+
+ReactDOM.render(<Provider store={store}> <App /> </Provider>, document.getElementById("root"));
