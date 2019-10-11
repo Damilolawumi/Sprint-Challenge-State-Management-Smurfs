@@ -3,30 +3,42 @@ import React from 'react';
 class SmurfForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             name: '',
             age: '',
             height: '',
-         }
+        }
     }
 
-    onNameChange = () => { }
+    onNameChange = (event) => {
+        this.setState({ 
+            name: event.target.value
+        })
+    }
 
-    onAgeChange = () => {}
+    onAgeChange = (event) => {
+        this.setState({
+            age: event.target.value
+        })
+    }
 
-    onHeightChange = () => {}
-    
+    onHeightChange = (event) => {
+        this.setState({
+            height: event.target.value
+        })
+     };
 
-    render() { 
-        return ( 
+
+    render() {
+        return (
             <div>
-                <input type="text" placeholder="name" value={this.state.name} onChange={onNameChange} />
-                <input type="text" placeholder="age" value={this.state.age} onChange={onAgeChange}/>
-                <input type="text" placeholder="height" value={this.state.height} onChange={onHeightChange}/>
+                <input type="text" placeholder="name" value={this.state.name} onChange={this.onNameChange} />
+                <input type="text" placeholder="age" value={this.state.age} onChange={this.onAgeChange} />
+                <input type="text" placeholder="height" value={this.state.height} onChange={this.onHeightChange} />
                 <button>Submit</button>
             </div>
-         );
+        );
     }
 }
- 
+
 export default SmurfForm;
