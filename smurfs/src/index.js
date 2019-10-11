@@ -8,7 +8,7 @@ import * as reducers from './state/reducers';
 import thunk from 'redux-thunk';
 
 const monsterReducer = combineReducers({
-    smurfs: reducers.countReducer,
+    smurfs: reducers.smurfReducer,
   
 });
 

@@ -1,14 +1,11 @@
-export const initialState = [
-    {
-        name: 'Brainey',
-        age: 200,
-        height: '5cm',
-        id: 0
-    }
-];
+import * as types from '../state/actionTypes';
 
-export function smurfReducer (state = initialValue, action) {
+export const initialState = [];
+
+export function smurfReducer (state = initialState, action) {
     switch (action.type) {
+        case types.LOAD_SMURF_DATA:
+            return [... action.payload]
         default:
             return state;
     }
